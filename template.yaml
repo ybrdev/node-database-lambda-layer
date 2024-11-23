@@ -5,18 +5,21 @@ Resources:
     Type: AWS::Serverless::LayerVersion
     Properties:
       LayerName: node-database-lambda-layer
-      Description: A custom Lambda layer for <description of your layer>
+      Description: A Lambda layer that supports database connections for MySQL, PostgreSQL, and SQL Server
       ContentUri: ./nodejs
       CompatibleRuntimes:
         - nodejs18.x
         - nodejs20.x
+    Metadata:
+      BuildMethod: nodejs20.x
+      BuildArchitecture: x86_64
 Metadata:
   AWS::ServerlessRepo::Application:
     Name: NodeDatabaseLayer
     Description: A Lambda layer that supports database connections for MySQL, PostgreSQL, and SQL Server
     Author: YBR
     LicenseUrl: LICENSE.txt
-    ReadmeUrl: https://github.com/ybrdev/node-database-lambda-layer/README.md
+    ReadmeUrl: README.md
     SpdxLicenseId: MIT
     HomePageUrl: https://github.com/ybrdev/node-database-lambda-layer
     Labels:
